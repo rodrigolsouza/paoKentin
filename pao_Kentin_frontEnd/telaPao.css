@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .botao-pao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  button {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .frances {
+    background-color: #FF5733;
+  }
+  
+  .bolachao {
+    background-color: #006400;
+  }
+  
+  .doce-goiabada {
+    background-color: #FFD700;
+  }
+  
+  .doce-coco {
+    background-color: #DA70D6;
+  }
+  
+  .carteira {
+    background-color: #008080;
+  }
+  
+  .italiano {
+    background-color: #FF8C00;
+  }
+  
+  .integral {
+    background-color: #800000;
+  }
+  

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cadastro do Pao</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <h1>Cadastro de Pao</h1>
+    <h5 id="result"></h5>
+
+    <form>
+      Nome:<input 
+      type="text" 
+      name="nome" 
+      id="txtNome"
+      /> <br>
+      Descricao: <br><textarea
+      name="descricao"
+      id="txtDescricao"
+      ></textarea> <br>
+      Tempo de Preparo:<input
+      type="number"
+      name="tempoPreparo"
+      id="txtTempoPreparo"
+      /> <br>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+      const formulario = document.forms[0];
+
+      formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const envio = {};
+
+        envio.nome = document.getElementById("txtNome").value;
+        envio.descricao = document.getElementById("txtDescricao").value;
+        envio.tempoPreparo = document.getElementById("txtTempoPreparo").value;
+
+        fetch("http://localhost:8092/pao", {
+          method: "POST",
+          body: JSON.stringify(envio),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+          .then((data) => {
+            document.getElementById("result").innerHTML =
+              "Cadastro Realizado com Sucesso!";
+          })
+          .catch((erro) => {
+            document.getElementById("result").innerHTML = "Erro ao realizar cadastro!";
+          });
+      });
+    </script>
+  </body>
+</html>
